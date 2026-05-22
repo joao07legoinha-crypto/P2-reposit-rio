@@ -1,7 +1,68 @@
-<h1>Reservas</h1>
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReservaJá - Finalizar Reserva</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <header>
+        <h1>ReservaJá</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="destaques.html">Destaques</a></li>
+                <li><a href="reserva.html">Fazer Reserva</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<form>
-  Nome: <input type="text"><br>
-  Data: <input type="date"><br>
-  <input type="submit" value="Reservar">
-</form>
+    <main>
+        <section>
+            <h2>Conclua a sua Reserva</h2>
+            <p>Preencha os seus dados abaixo para confirmar.</p>
+            
+            <form action="sucesso.html" method="POST">
+                <fieldset>
+                    <legend>Dados Pessoais</legend>
+                    
+                    <label for="nome">Nome Completo:</label>
+                    <input type="text" id="nome" name="nome" required>
+                    
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" required>
+                    
+                    <label for="telefone">Telefone:</label>
+                    <input type="tel" id="telefone" name="telefone">
+                </fieldset>
+
+                <fieldset>
+                    <legend>Detalhes da Reserva</legend>
+                    
+                    <label for="tipo-quarto">Tipo de Quarto:</label>
+                    <select id="tipo-quarto" name="tipo_quarto">
+                        <option value="standard">Standard</option>
+                        <option value="duplo">Duplo</option>
+                        <option value="suite">Suite Premium</option>
+                    </select>
+
+                    <label for="hospedes">Número de Hóspedes:</label>
+                    <input type="number" id="hospedes" name="hospedes" min="1" max="10" value="1">
+                    
+                    <label for="pedidos">Pedidos Especiais:</label>
+                    <textarea id="pedidos" name="pedidos" rows="4" placeholder="Alguma preferência especial?"></textarea>
+                </fieldset>
+
+                <button type="submit">Confirmar Reserva</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025/26 Grupo X - Sistemas de Reserva Online</p>
+    </footer>
+
+    <script src="scripts/main.js"></script>
+</body>
+</html>
