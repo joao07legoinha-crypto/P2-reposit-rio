@@ -3,66 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ReservaJá - Finalizar Reserva</title>
+    <title>Finalizar Reserva | P02</title>
     <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
+
     <header>
-        <h1>ReservaJá</h1>
+        <div class="logo">ReservaJá</div>
         <nav>
-            <ul>
-                <li><a href="index.html">Início</a></li>
-                <li><a href="destaques.html">Destaques</a></li>
-                <li><a href="reserva.html">Fazer Reserva</a></li>
-            </ul>
+            <a href="index.html">Início</a> | 
+            <a href="reservas.html" class="ativo">As Minhas Reservas</a>
         </nav>
     </header>
 
-    <main>
-        <section>
-            <h2>Conclua a sua Reserva Agora</h2>
-            <p>Preencha os seus dados abaixo para confirmar.</p>
+    <!-- O NOVO BANNER VISUAL COLOCOU-SE AQUI -->
+    <div class="banner-imagens">
+        <div class="banner-texto">
+            <h2>Encontre o seu Voo e Hotel Ideal</h2>
+            <p>Tudo o que precisa para a sua próxima viagem, num só lugar.</p>
+        </div>
+    </div>
+
+    <main class="conteudo-principal">
+        <section class="banner-pesquisa">
+            <h2>Dados do Cliente & Pagamento</h2>
+            <p>Insira os seus dados para armazenar a reserva com segurança no servidor.</p>
             
-            <form action="sucesso.html" method="POST">
-                <fieldset>
-                    <legend>Dados Pessoais</legend>
-                    
+            <form class="form-pesquisa">
+                <div class="grupo-input">
                     <label for="nome">Nome Completo:</label>
-                    <input type="text" id="nome" name="nome" required>
-                    
-                    <label for="email">E-mail:</label>
-                    <input type="email" id="email" name="email" required>
-                    
-                    <label for="telefone">Telefone:</label>
-                    <input type="tel" id="telefone" name="telefone">
-                </fieldset>
+                    <input type="text" id="nome" placeholder="Seu nome aqui" required>
+                </div>
 
-                <fieldset>
-                    <legend>Detalhes da Reserva</legend>
-                    
-                    <label for="tipo-quarto">Tipo de Quarto:</label>
-                    <select id="tipo-quarto" name="tipo_quarto">
-                        <option value="standard">Standard</option>
-                        <option value="duplo">Duplo</option>
-                        <option value="suite">Suite Premium</option>
+                <div class="grupo-input">
+                    <label for="email">E-mail de Contacto:</label>
+                    <input type="email" id="email" placeholder="exemplo@isep.ipp.pt" required>
+                </div>
+
+                <div class="grupo-input">
+                    <label for="pagamento">Método de Pagamento:</label>
+                    <select id="pagamento" name="pagamento">
+                        <option value="cc">Cartão de Crédito</option>
+                        <option value="mb">Multibanco</option>
+                        <option value="mbway">MB WAY</option>
                     </select>
+                </div>
 
-                    <label for="hospedes">Número de Hóspedes:</label>
-                    <input type="number" id="hospedes" name="hospedes" min="1" max="10" value="1">
-                    
-                    <label for="pedidos">Pedidos Especiais:</label>
-                    <textarea id="pedidos" name="pedidos" rows="4" placeholder="Alguma preferência especial?"></textarea>
-                </fieldset>
-
-                <button type="submit">Confirmar Reserva</button>
+                <button type="button" class="btn-procurar" onclick="alert('Reserva processada com sucesso!')">Confirmar e Pagar</button>
             </form>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2025/26 Grupo X - Sistemas de Reserva Online</p>
+        <p>&copy; 2026 - P02 - Sistemas de Reservas Online | DEAPC - ISEP</p>
     </footer>
 
-    <script src="scripts/main.js"></script>
 </body>
 </html>
