@@ -1,7 +1,45 @@
-<h1>Login</h1>
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReservaJá - Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">ReservaJá</div>
+        <nav>
+            <a href="index.html">Início</a>
+            <a href="login.html" class="ativo">Login</a>
+            <a href="reservas.html">Reservar</a>
+            <a href="acessos.php">Acessos</a>
+        </nav>
+    </header>
 
-<form>
-  Email: <input type="email"><br>
-  Password: <input type="password"><br>
-  <input type="submit">
-</form>
+    <main class="conteudo-principal">
+        <section class="banner-pesquisa">
+            <h2>Autenticação de Utilizador</h2>
+            <p>Introduza as suas credenciais para aceder à aplicação.</p>
+
+            <form class="form-pesquisa" method="POST" action="login.php">
+                <div class="grupo-input">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+
+                <div class="grupo-input">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+
+                <button type="submit" class="btn-procurar">Entrar</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 - P02 - Sistemas de Reservas Online | DEAPC - ISEP</p>
+    </footer>
+</body>
+</html>

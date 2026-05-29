@@ -3,16 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ReservaJá | P02 - Sistemas de Reservas Online</title>
-    <link rel="stylesheet" href="styles/style.css">
+    <title>ReservaJá - Pesquisa</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <header>
         <div class="logo">ReservaJá</div>
         <nav>
-            <a href="index.html" class="ativo">Início</a> | 
-            <a href="reservas.html">As Minhas Reservas</a>
+            <a href="index.html" class="ativo">Início</a>
+            <a href="login.html">Login</a>
+            <a href="reservas.html">Reservar</a>
+            <a href="acessos.php">Acessos</a>
         </nav>
     </header>
 
@@ -20,8 +21,8 @@
         <section class="banner-pesquisa">
             <h2>Encontre a sua próxima estadia, voo ou evento</h2>
             <p>Interação direta com a base de dados para gerir a sua disponibilidade em tempo real.</p>
-            
-            <form class="form-pesquisa">
+
+            <form class="form-pesquisa" method="POST" action="pesquisa.php">
                 <div class="grupo-input">
                     <label for="tipo">Tipo de Reserva:</label>
                     <select id="tipo" name="tipo">
@@ -30,18 +31,18 @@
                         <option value="evento">Evento / Concerto</option>
                     </select>
                 </div>
-                
+
                 <div class="grupo-input">
                     <label for="destino">Destino ou Nome do Evento:</label>
-                    <input type="text" id="destino" placeholder="Ex: Porto, Lisboa..." required>
+                    <input type="text" id="destino" name="destino" placeholder="Ex: Porto, Lisboa..." required>
                 </div>
 
                 <div class="grupo-input">
                     <label for="data">Data Pretendida:</label>
-                    <input type="date" id="data" required>
+                    <input type="date" id="data" name="data" required>
                 </div>
 
-                <button type="button" class="btn-procurar" onclick="alert('A pesquisar na base de dados...')">Procurar Disponibilidade</button>
+                <button type="submit" class="btn-procurar">Procurar Disponibilidade</button>
             </form>
         </section>
     </main>
@@ -49,6 +50,5 @@
     <footer>
         <p>&copy; 2026 - P02 - Sistemas de Reservas Online | DEAPC - ISEP</p>
     </footer>
-
 </body>
 </html>
