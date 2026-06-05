@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ReservaJá - Finalizar Reserva</title>
     <link rel="stylesheet" href="style.css">
+    <script src="validacoes.js" defer></script>
 </head>
 <body>
     <header>
@@ -22,7 +23,7 @@
             <h2>Dados do Cliente e Pagamento</h2>
             <p>Insira os seus dados para armazenar a reserva com segurança no servidor.</p>
 
-            <form class="form-pesquisa" method="POST" action="novareserva.php">
+            <form class="form-pesquisa" method="POST" action="novareserva.php" onsubmit="return validarReserva()">
                 <div class="grupo-input">
                     <label for="nome">Nome Completo</label>
                     <input type="text" id="nome" name="nome" placeholder="Seu nome aqui" required>

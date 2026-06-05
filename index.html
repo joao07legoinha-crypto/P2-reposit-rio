@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ReservaJá - Pesquisa</title>
     <link rel="stylesheet" href="style.css">
+    <script src="validacoes.js" defer></script>
 </head>
 <body>
     <header>
@@ -22,7 +23,7 @@
             <h2>Encontre a sua próxima estadia, voo ou evento</h2>
             <p>Interação direta com a base de dados para gerir a sua disponibilidade em tempo real.</p>
 
-            <form class="form-pesquisa" method="POST" action="pesquisa.php">
+            <form class="form-pesquisa" method="POST" action="pesquisa.php" onsubmit="return validarPesquisa()">
                 <div class="grupo-input">
                     <label for="tipo">Tipo de Reserva:</label>
                     <select id="tipo" name="tipo">

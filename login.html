@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ReservaJá - Login</title>
     <link rel="stylesheet" href="style.css">
+    <script src="validacoes.js" defer></script>
 </head>
 <body>
     <header>
@@ -22,7 +23,7 @@
             <h2>Autenticação de Utilizador</h2>
             <p>Introduza as suas credenciais para aceder à aplicação.</p>
 
-            <form class="form-pesquisa" method="POST" action="login.php">
+            <form class="form-pesquisa" method="POST" action="login.php" onsubmit="return validarLogin()">
                 <div class="grupo-input">
                     <label for="username">Username</label>
                     <input type="text" id="username" name="username" required>
