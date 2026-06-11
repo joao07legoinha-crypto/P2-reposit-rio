@@ -121,17 +121,16 @@ function validarReserva() {
     }
 
     return valido;
+}
 
 // 4. EXERCÍCIO 2:Interação DOM
 
 function toggleInfoGrupo() {
     let painelInfo = document.getElementById("info-grupo");
     
-    // Altera o estado de exibição (BOM/DOM) conforme o clique do utilizador
     if (painelInfo.style.display === "none" || painelInfo.style.display === "") {
         painelInfo.style.display = "block";
     } else {
         painelInfo.style.display = "none";
     }
-}
 }
