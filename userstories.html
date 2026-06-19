@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReservaJá - User Stories</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">ReservaJá</div>
+        <nav>
+            <a href="index.html">Início</a>
+            <a href="login.html">Login</a>
+            <a href="reservas.html">Reservar</a>
+            <a href="acessos.php">Acessos</a>
+            <a href="userstories.html" class="ativo">User Stories</a>
+        </nav>
+    </header>
+
+    <main class="conteudo-principal">
+        <section class="banner-pesquisa">
+            <h2>Estado de Implementação — User Stories</h2>
+            <div id="tabelas-area"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 - P02 - Sistemas de Reservas Online | DEAPC - ISEP</p>
+    </footer>
+
+    <script>
+        const userStories = {
+            "Cliente": [
+                { codigo: "USR1", descricao: "Como cliente quero fazer login na aplicação",                               prioridade: "Alta",  pct: "100%" },
+                { codigo: "USR2", descricao: "Como cliente quero pesquisar disponibilidade por destino e data",           prioridade: "Alta",  pct: "80%"  },
+                { codigo: "USR3", descricao: "Como cliente quero fazer uma reserva e escolher o método de pagamento",     prioridade: "Alta",  pct: "100%" },
+                { codigo: "USR4", descricao: "Como cliente quero receber confirmação da minha reserva",                   prioridade: "Média", pct: "90%"  },
+                { codigo: "USR5", descricao: "Como cliente quero que os formulários validem os meus dados",               prioridade: "Alta",  pct: "100%" },
+                { codigo: "USR6", descricao: "Como cliente quero que a aplicação funcione no telemóvel",                  prioridade: "Média", pct: "85%"  }
+            ],
+            "Administrador": [
+                { codigo: "USR7", descricao: "Como administrador quero consultar o histórico de acessos",                 prioridade: "Alta",  pct: "100%" },
+                { codigo: "USR8", descricao: "Como administrador quero que as passwords sejam guardadas de forma segura", prioridade: "Alta",  pct: "100%" }
+            ]
+        };
+
+        const area = document.getElementById("tabelas-area");
+
+        for (const ator in userStories) {
+            const stories = userStories[ator];
+
+            const tabela = document.createElement("table");
+            tabela.border = "1";
+            tabela.cellPadding = "8";
+            tabela.cellSpacing = "0";
+            tabela.style.width = "100%";
+            tabela.style.marginTop = "20px";
+            tabela.style.borderCollapse = "collapse";
+
+            // Linha do Ator
+            const trAtor = document.createElement("tr");
+            trAtor.innerHTML = "<td><strong>Ator</strong></td><td colspan='3' align='center'><strong>" + ator + "</strong></td>";
+            tabela.appendChild(trAtor);
+
+            // Linha de cabeçalho das colunas
+            const trCabecalho = document.createElement("tr");
+            trCabecalho.innerHTML = "<th>User Story</th><th>Descrição</th><th>Prioridade</th><th>Implementado</th>";
+            tabela.appendChild(trCabecalho);
+
+            // Linhas das user stories
+            for (let i = 0; i < stories.length; i++) {
+                const us = stories[i];
+                const tr = document.createElement("tr");
+                tr.innerHTML = "<td align='center'>" + us.codigo + "</td>" +
+                               "<td>" + us.descricao + "</td>" +
+                               "<td align='center'>" + us.prioridade + "</td>" +
+                               "<td align='center'>" + us.pct + "</td>";
+                tabela.appendChild(tr);
+            }
+
+            // Linha vazia no final (como no exemplo do professor)
+            const trVazia = document.createElement("tr");
+            trVazia.innerHTML = "<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>";
+            tabela.appendChild(trVazia);
+
+            area.appendChild(tabela);
+        }
+    </script>
+</body>
+</html>
